@@ -4,17 +4,19 @@ import com.order.client.ProductoFeignClient;
 import com.order.model.Orden;
 import com.order.model.ProductoDTO;
 import com.order.repository.OrdenRepository;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Slf4j
 @RestController
 @RequestMapping("/ordenes")
 public class OrdenController {
+
+    private static final Logger log = LoggerFactory.getLogger(OrdenController.class);
 
     @Autowired
     private OrdenRepository repository;
