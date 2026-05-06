@@ -15,4 +15,12 @@ public class KafkaTopicConfig {
                 .replicas(1)
                 .build();
     }
+
+    @Bean
+    public NewTopic orderStatusChangedTopic() {
+        return TopicBuilder.name("order_status_changed_events")
+                .partitions(1)
+                .replicas(1)
+                .build();
+    }
 }
