@@ -13,7 +13,8 @@ public class Orden {
     private String productoId;
     private Integer cantidad;
     private Double precioTotal;
-    private String status; // PENDIENTE, PAGADO, CANCELADO
+    private Double montoPagado = 0.0;
+    private String status; // PENDIENTE, PAGADO, CANCELADO, PARCIALMENTE_PAGADO
     private LocalDateTime fechaCreacion;
 
     public Orden() {}
@@ -28,6 +29,8 @@ public class Orden {
     public void setCantidad(Integer cantidad) { this.cantidad = cantidad; }
     public Double getPrecioTotal() { return precioTotal; }
     public void setPrecioTotal(Double precioTotal) { this.precioTotal = precioTotal; }
+    public Double getMontoPagado() { return montoPagado; }
+    public void setMontoPagado(Double montoPagado) { this.montoPagado = montoPagado; }
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
     public LocalDateTime getFechaCreacion() { return fechaCreacion; }

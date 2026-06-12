@@ -27,6 +27,12 @@ public class OrdenController {
     @Autowired
     private org.springframework.kafka.core.KafkaTemplate<String, Object> kafkaTemplate;
 
+    @GetMapping
+    public List<Orden> getAll() {
+        log.info("Consultando todas las órdenes");
+        return repository.findAll();
+    }
+
     @PostMapping
     public Orden create(@RequestBody Orden orden, @RequestHeader(value = "X-Retry-Attempt", required = false) String isRetry) {
         log.info("Iniciando creación de orden para el producto ID: {}", orden.getProductoId());
